@@ -11,8 +11,21 @@ namespace Serilog_Tutorial
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            var connectionString = "Server=(local);Database=Development;Trusted_Connection=True;Encrypt=False";
+            var sinkOptions = new Serilog.Sinks.MSSqlServer.MSSqlServerSinkOptions
+            {
+                TableName = "Serilog",
+                AutoCreateSqlTable = true,
+            };
+            var columnOptions = new Serilog.Sinks.MSSqlServer.ColumnOptions();
+
+            columnOptions.Store.Add(Serilog.Sinks.MSSqlServer.StandardColumn.LogEvent);
+            columnOptions.Store.Remove(Serilog.Sinks.MSSqlServer.StandardColumn.MessageTemplate);
+            columnOptions.Properties.DataLength = 1000;
+            columnOptions.Id.DataType = System.Data.SqlDbType.BigInt;
+
             Serilog.Log.Logger = new Serilog.LoggerConfiguration()
-                 .WriteTo.File("logs/serilog.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true, retainedFileCountLimit: 10)
+                 .WriteTo.MSSqlServer(connectionString: connectionString, sinkOptions: sinkOptions, columnOptions: columnOptions)
                  .MinimumLevel.Information()
                  .CreateLogger();
 
