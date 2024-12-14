@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace Serilog_Tutorial
 {
     public class Program
@@ -8,6 +10,13 @@ namespace Serilog_Tutorial
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            Serilog.Log.Logger = new Serilog.LoggerConfiguration()
+                 .WriteTo.Console(theme: Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme.Sixteen)
+                 .MinimumLevel.Information()
+                 .CreateLogger();
+
+            builder.Host.UseSerilog();
 
             var app = builder.Build();
 
