@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog", "Serilog\Serilog.csproj", "{631483B0-ABC1-4991-9F31-DB64BD6B4B96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog-Tutorial", "Serilog-Tutorial\Serilog-Tutorial.csproj", "{938BD7CB-4963-4CE1-8B11-9F260747095C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{631483B0-ABC1-4991-9F31-DB64BD6B4B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{631483B0-ABC1-4991-9F31-DB64BD6B4B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{631483B0-ABC1-4991-9F31-DB64BD6B4B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{631483B0-ABC1-4991-9F31-DB64BD6B4B96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938BD7CB-4963-4CE1-8B11-9F260747095C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938BD7CB-4963-4CE1-8B11-9F260747095C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938BD7CB-4963-4CE1-8B11-9F260747095C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938BD7CB-4963-4CE1-8B11-9F260747095C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
