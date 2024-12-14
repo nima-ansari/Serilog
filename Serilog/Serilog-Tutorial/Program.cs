@@ -12,7 +12,7 @@ namespace Serilog_Tutorial
             builder.Services.AddControllersWithViews();
 
             Serilog.Log.Logger = new Serilog.LoggerConfiguration()
-                 .WriteTo.Console(theme: Serilog.Sinks.SystemConsole.Themes.AnsiConsoleTheme.Sixteen)
+                 .WriteTo.File("logs/serilog.txt", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true, retainedFileCountLimit: 10)
                  .MinimumLevel.Information()
                  .CreateLogger();
 
